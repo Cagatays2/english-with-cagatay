@@ -1,0 +1,99 @@
+/* ============================================================
+   ANIMATIONS — Keyframes, scroll reveal classes, stagger delays
+   ============================================================ */
+
+/* ── Keyframes ── */
+
+@keyframes float-particle {
+  0%   { transform: translateY(0)     translateX(0); }
+  25%  { transform: translateY(-20px) translateX(10px); }
+  50%  { transform: translateY(-10px) translateX(-10px); }
+  75%  { transform: translateY(-30px) translateX(5px); }
+  100% { transform: translateY(0)     translateX(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.6); opacity: 0.5; }
+}
+
+@keyframes scroll-bob {
+  0%, 100% { transform: translateY(0);    opacity: 1; }
+  60%       { transform: translateY(10px); opacity: 0.3; }
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0   rgba(0, 191, 165, 0.5), 0 6px 24px rgba(0, 191, 165, 0.4); }
+  100% { box-shadow: 0 0 0 20px rgba(0, 191, 165, 0),   0 6px 24px rgba(0, 191, 165, 0.2); }
+}
+
+
+/* ── Scroll Reveal — Up ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+.reveal.revealed { opacity: 1; transform: none; }
+
+
+/* ── Scroll Reveal — Directional ── */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+.reveal-left.revealed { opacity: 1; transform: none; }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+.reveal-right.revealed { opacity: 1; transform: none; }
+
+
+/* ── Clip-path left-to-right wipe (How It Works steps) ── */
+.clip-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.9s var(--ease-snap);
+}
+.clip-reveal.clip-revealed { clip-path: inset(0 0% 0 0); }
+
+
+/* ── Stagger delay helpers ── */
+.delay-1 { transition-delay: 0.10s; }
+.delay-2 { transition-delay: 0.20s; }
+.delay-3 { transition-delay: 0.30s; }
+.delay-4 { transition-delay: 0.40s; }
+.delay-5 { transition-delay: 0.50s; }
+
+
+/* ── Hero headline word stagger (triggered by body.loaded) ── */
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+body.loaded .hero-word                { opacity: 1; transform: none; }
+body.loaded .hero-word:nth-child(1)   { transition-delay: 0.10s; }
+body.loaded .hero-word:nth-child(2)   { transition-delay: 0.22s; }
+body.loaded .hero-word:nth-child(3)   { transition-delay: 0.34s; }
+body.loaded .hero-word:nth-child(4)   { transition-delay: 0.46s; }
+body.loaded .hero-word:nth-child(5)   { transition-delay: 0.58s; }
+
+
+/* ── Hero supporting elements fade up on load ── */
+.hero-badge-row,
+.hero-sub,
+.hero-ctas,
+.trust-row {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+body.loaded .hero-badge-row { opacity: 1; transform: none; transition-delay: 0.05s; }
+body.loaded .hero-sub       { opacity: 1; transform: none; transition-delay: 0.65s; }
+body.loaded .hero-ctas      { opacity: 1; transform: none; transition-delay: 0.80s; }
+body.loaded .trust-row      { opacity: 1; transform: none; transition-delay: 0.95s; }

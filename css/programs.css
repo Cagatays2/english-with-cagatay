@@ -1,0 +1,115 @@
+/* ============================================================
+   PROGRAMS — Dark slate #2B324D background, 2×2 card grid
+   ============================================================ */
+
+#programs {
+  background: var(--navy-light);
+  padding: 7rem 0;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── Card ── */
+.prog-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem 2rem 1.75rem;
+  overflow: hidden;
+  cursor: default;
+  transition: border-color 0.3s, transform 0.35s var(--ease-out), box-shadow 0.35s;
+}
+.prog-card:hover {
+  border-color: var(--coral);
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(0, 191, 165, 0.3),
+    0 20px 60px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 191, 165, 0.12);
+}
+
+/* Large watermark number behind each card */
+.prog-card-number {
+  position: absolute;
+  top: -1rem; right: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 8vw, 7rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  opacity: 0.04;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Coral icon circle */
+.prog-card-icon-wrap {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: filter 0.3s, transform 0.3s;
+}
+.prog-card-icon-wrap i                { width: 18px; height: 18px; }
+.prog-card:hover .prog-card-icon-wrap { filter: brightness(1.15); transform: scale(1.08); }
+
+.prog-card-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.625rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.prog-card-desc {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+/* Tag chips */
+.prog-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.prog-tags span {
+  font-family: var(--font);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  background: rgba(38, 47, 56, 0.04);
+  border: 1px solid var(--card-border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.prog-card:hover .prog-tags span {
+  background: rgba(0, 191, 165, 0.12);
+  color: var(--coral);
+  border-color: rgba(0, 191, 165, 0.35);
+}

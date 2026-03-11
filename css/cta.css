@@ -1,0 +1,87 @@
+/* ============================================================
+   CTA — Dark navy #1E253A, centered, pulsing button
+   ============================================================ */
+
+#cta {
+  position: relative;
+  background: var(--navy);
+  padding: 9rem 2rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Radial coral glow at center */
+.cta-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse at center, rgba(0, 191, 165, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Override eyebrow for centered alignment */
+.cta-eyebrow {
+  display: block;
+  text-align: center;
+  margin: 0 auto 1rem;
+}
+
+.cta-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.cta-sub {
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.8;
+  margin-bottom: 2.75rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn-wrap { margin-bottom: 1.5rem; }
+
+.cta-phone {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+.cta-phone a { color: var(--coral); font-weight: 600; text-decoration: none; transition: color 0.2s; }
+.cta-phone a:hover { color: var(--coral-hover); text-decoration: underline; }
+
+/* Reassurance badges below CTA */
+.cta-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.cta-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+.cta-badge-item i { width: 14px; height: 14px; color: var(--coral); flex-shrink: 0; }

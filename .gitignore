@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VSCode
+.vscode/
+
+# Node (just in case)
+node_modules/
+npm-debug.log*
+
+# Environment files
+.env
+.env.local

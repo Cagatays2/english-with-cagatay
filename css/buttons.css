@@ -1,0 +1,96 @@
+/* ============================================================
+   BUTTONS — Primary, Ghost, CTA Pulse
+   ============================================================ */
+
+/* ── Primary (coral + shimmer sweep on hover) ── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--coral);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 16px rgba(0, 191, 165, 0.35);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+.btn-primary:hover::after          { left: 140%; }
+.btn-primary i                     { width: 16px; height: 16px; flex-shrink: 0; transition: transform 0.2s; }
+.btn-primary:hover                 { background: var(--coral-hover); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0, 191, 165, 0.5); }
+.btn-primary:hover i               { transform: translateX(3px); }
+
+
+/* ── Ghost (white border) ── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1.5px solid rgba(38, 47, 56, 0.25);
+  letter-spacing: -0.01em;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.btn-ghost:hover {
+  border-color: var(--coral);
+  background: var(--coral-faint);
+  transform: translateY(-2px);
+}
+
+
+/* ── CTA Pulse (coral + continuous glow ring) ── */
+.btn-cta-pulse {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--coral);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2.25rem;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  animation: pulse-ring 2s ease-out infinite;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-cta-pulse::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+.btn-cta-pulse:hover::after        { left: 140%; }
+.btn-cta-pulse i                   { width: 18px; height: 18px; flex-shrink: 0; transition: transform 0.2s; }
+.btn-cta-pulse:hover               { background: var(--coral-hover); transform: translateY(-2px); }
+.btn-cta-pulse:hover i             { transform: translateX(3px); }

@@ -1,0 +1,164 @@
+/* ============================================================
+   NAVBAR — Sticky header, nav links, hamburger, mobile menu
+   ============================================================ */
+
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: rgba(254, 247, 242, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+#navbar.scrolled {
+  background: rgba(254, 247, 242, 0.97);
+  border-bottom-color: var(--card-border);
+  box-shadow: 0 2px 32px rgba(0, 0, 0, 0.08);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.nav-logo span { color: var(--coral); }
+
+/* Desktop nav links */
+#nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+#nav-links a {
+  position: relative;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+/* Teal underline slide on hover */
+#nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0.8rem; right: 0.8rem;
+  height: 2px;
+  background: var(--coral);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-out);
+}
+#nav-links a:hover                { color: var(--text-primary); background: rgba(38, 47, 56, 0.06); }
+#nav-links a:hover::after         { transform: scaleX(1); }
+
+/* Nav CTA button */
+.nav-cta {
+  background: var(--coral) !important;
+  color: var(--white) !important;
+  padding: 0.5rem 1.1rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  box-shadow: 0 2px 12px rgba(0, 191, 165, 0.3);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s, filter 0.2s !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover {
+  background: var(--coral-hover) !important;
+  color: var(--white) !important;
+  transform: translateY(-1px) scale(1.03) !important;
+  box-shadow: 0 6px 20px rgba(0, 191, 165, 0.45) !important;
+  filter: brightness(1.06) !important;
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0;
+  transition: background 0.2s;
+}
+.hamburger:hover { background: rgba(38, 47, 56, 0.08); }
+
+.hamburger span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile menu ── */
+#mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 0.75rem 2rem 1.25rem;
+  background: rgba(245, 247, 250, 0.98);
+  border-top: 1px solid var(--card-border);
+  gap: 0.1rem;
+}
+#mobile-menu.open { display: flex; }
+
+#mobile-menu a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  text-decoration: none;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--card-border);
+  transition: color 0.2s;
+}
+#mobile-menu a:hover { color: var(--coral); }
+
+.mobile-cta {
+  margin-top: 0.75rem !important;
+  background: var(--coral);
+  color: var(--white) !important;
+  text-align: center;
+  padding: 0.85rem 0 !important;
+  border-radius: 8px;
+  font-weight: 600 !important;
+  border-bottom: none !important;
+}
+
+@media (max-width: 768px) {
+  .hamburger  { display: flex; }
+  #nav-links  { display: none; }
+}

@@ -1,0 +1,132 @@
+/* ============================================================
+   ABOUT — Dark slate #2B324D, split layout (left text, right cards)
+   ============================================================ */
+
+#about {
+  background: var(--navy-light);
+  padding: 13rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ── Left column ── */
+.about-left .section-eyebrow { display: block; margin-bottom: 0.9rem; }
+
+.about-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+}
+
+.about-body {
+  font-family: var(--font);
+  font-size: 0.975rem;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+.about-body--mt { margin-top: 1rem; }
+
+/* Coral-bordered credential pills */
+.about-cred-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.cred-pill {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--coral);
+  background: transparent;
+  border: 1.5px solid rgba(0, 191, 165, 0.4);
+  padding: 0.45rem 0.9rem;
+  border-radius: 50px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.cred-pill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.cred-pill:hover::after { left: 140%; }
+.cred-pill i { width: 13px; height: 13px; flex-shrink: 0; }
+.cred-pill:hover {
+  background: var(--coral);
+  color: var(--white);
+  border-color: var(--coral);
+  transform: translateY(-2px);
+}
+
+/* ── Right column — feature cards ── */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  transition: border-color 0.25s, transform 0.25s var(--ease-out), box-shadow 0.25s;
+}
+.about-feature-card:hover {
+  border-color: rgba(0, 191, 165, 0.5);
+  transform: translateX(6px);
+  box-shadow: 0 4px 24px rgba(0, 191, 165, 0.1);
+}
+
+.about-feature-icon {
+  width: 2.75rem; height: 2.75rem;
+  min-width: 2.75rem;
+  border-radius: 50%;
+  background: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+  transition: filter 0.25s, transform 0.25s;
+}
+.about-feature-icon i { width: 17px; height: 17px; }
+.about-feature-card:hover .about-feature-icon { filter: brightness(1.15); transform: scale(1.06); }
+
+.about-feature-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.about-feature-desc {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}

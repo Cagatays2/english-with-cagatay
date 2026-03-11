@@ -1,0 +1,62 @@
+/* ============================================================
+   BASE — Reset, CSS Custom Properties, html, body
+   English With Cagatay
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ── Backgrounds ── */
+  --navy:           #FEF7F2;   /* primary page background (warm linen)    */
+  --navy-light:     #F5F7FA;   /* cards & section alternates (cloud gray) */
+  --navy-dark:      #F5F7FA;   /* kept for compatibility                  */
+
+  /* ── Accent ── */
+  --coral:          #00BFA5;   /* CTAs, icons — vibrant teal              */
+  --coral-hover:    #00A896;
+  --coral-faint:    rgba(0, 191, 165, 0.08);
+
+  /* ── Highlight / dark accent ── */
+  --teal-dark:      #00796B;   /* "Speak" headline highlight              */
+
+  /* ── Stats band ── */
+  --seafoam:        #C7EFDC;   /* stats band background                   */
+
+  /* ── Text ── */
+  --white:          #FFFFFF;
+  --text-primary:   #262F38;   /* headlines & primary text                */
+  --text-soft:      #616D7B;   /* subheadings & body copy                 */
+  --text-muted:     rgba(97, 109, 123, 0.6);
+  --text-faint:     rgba(97, 109, 123, 0.3);
+
+  /* ── Cards ── */
+  --card-bg:        rgba(38, 47, 56, 0.04);
+  --card-border:    rgba(38, 47, 56, 0.1);
+
+  /* ── Fonts ── */
+  --font:           'Inter', system-ui, sans-serif;
+  --font-heading:   'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* ── Easings ── */
+  --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap:      cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--navy);
+  color: var(--text-soft);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}

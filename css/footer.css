@@ -1,0 +1,105 @@
+/* ============================================================
+   FOOTER — Deep charcoal, inverted from light page theme
+   ============================================================ */
+
+#footer {
+  background: #262F38;
+  padding: 5rem 2rem 2rem;
+  border-top: none;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.75fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Brand column */
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.footer-logo span { color: var(--coral); }
+
+.footer-tagline {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Social icon row */
+.footer-socials { display: flex; gap: 0.6rem; }
+
+.footer-social-link {
+  width: 2.25rem; height: 2.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+.footer-social-link i { width: 15px; height: 15px; }
+.footer-social-link:hover {
+  background: var(--coral);
+  color: var(--white);
+  border-color: var(--coral);
+  transform: translateY(-2px);
+}
+
+/* Nav columns */
+.footer-nav-label {
+  font-family: var(--font);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 1rem;
+}
+
+.footer-nav { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.footer-nav a,
+.footer-contact-col a,
+.footer-contact-col span {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+.footer-nav a:hover,
+.footer-contact-col a:hover { color: var(--coral); }
+
+.footer-contact-col { display: flex; flex-direction: column; gap: 0.5rem; }
+
+/* Bottom bar */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+}

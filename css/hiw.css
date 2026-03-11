@@ -1,0 +1,110 @@
+/* ============================================================
+   HOW IT WORKS — Timeline layout with numbered dots
+   ============================================================ */
+
+#how-it-works {
+  background: var(--navy);
+  padding: 12rem 0;
+}
+
+/* ── Timeline row ── */
+.hiw-steps-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+  align-items: start;
+}
+
+/* Solid horizontal connector line through dot centers */
+.hiw-connector {
+  position: absolute;
+  top: 11px; /* half of 24px dot = vertically centered */
+  left: 16.667%;
+  right: 16.667%;
+  height: 2px;
+  background: var(--text-primary);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Per-step column ── */
+.hiw-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 3rem 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: default;
+  transition: none;
+  margin-top: 1.5rem;
+}
+
+/* Small filled dot sitting on the line */
+.hiw-point-dot {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 2;
+  transition: background 0.2s, transform 0.2s;
+}
+.hiw-step:hover .hiw-point-dot {
+  background: var(--coral);
+  transform: scale(1.25);
+}
+
+/* Large number label — matches the sketch style */
+.hiw-point-num {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+  transition: color 0.2s;
+}
+.hiw-step:hover .hiw-point-num { color: var(--coral); }
+
+.hiw-step-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.hiw-step-desc {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  color: var(--text-soft);
+  line-height: 1.75;
+  margin-bottom: 0.875rem;
+}
+
+.hiw-step-detail {
+  font-family: var(--font);
+  font-size: 0.84rem;
+  color: var(--coral);
+  font-weight: 600;
+  line-height: 1.7;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--card-border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hiw-steps-row {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hiw-connector { display: none; }
+  .hiw-point-dot { margin: 0 0 1rem; }
+  .hiw-step { text-align: left; padding: 0; }
+}

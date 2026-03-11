@@ -1,0 +1,58 @@
+/* ============================================================
+   STATS BAND — Full coral gradient, count-up numbers
+   ============================================================ */
+
+.stats-band {
+  background: linear-gradient(135deg, #C7EFDC, #B0E8D0);
+  padding: 4rem 2rem;
+}
+
+.stats-band-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+  align-items: center;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem 1.5rem;
+}
+
+.stat-num-wrap {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.stat-suffix {
+  font-size: 0.55em;
+  font-weight: 700;
+  color: rgba(38, 47, 56, 0.7);
+  margin-top: 0.3em;
+}
+
+.stat-label {
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(38, 47, 56, 0.7);
+}
+
+.stat-divider {
+  background: rgba(38, 47, 56, 0.2);
+  height: 50px;
+  width: 1px;
+  align-self: center;
+}
