@@ -64,7 +64,7 @@ const STEPS = [
 ];
 
 const STATS = [
-  { target: 500, suffix: '+', label: 'Students Taught' },
+  { target: 50, suffix: '+', label: 'Students Taught' },
   { target: 4,   suffix: '',  label: 'Programs' },
   { target: 3,   suffix: '',  label: 'Languages' },
   { target: 100, suffix: '%', label: 'Online' },
@@ -81,8 +81,8 @@ const CONTACTS = [
   {
     icon:   'mail',
     label:  'Email',
-    detail: 'cagataysagir95@gmail.com',
-    href:   'mailto:cagataysagir95@gmail.com',
+    detail: 'englishwithcagatay@gmail.com',
+    href:   'mailto:englishwithcagatay@gmail.com',
     isLink: true,
   },
   {
